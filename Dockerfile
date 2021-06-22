@@ -4,6 +4,7 @@ FROM python:3.8
 ADD main.py .
 ADD deletedupes.py .
 ADD makehashes.py .
+ADD requirements.txt .
 #Random stuff I found online bc of some errors
 RUN apt-get update && apt-get install -y apt-transport-https
 #apt-get management

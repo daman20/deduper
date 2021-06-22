@@ -5,9 +5,7 @@ name: Publish Docker image
 # separate terms of service, privacy policy, and support
 # documentation.
 
-on:
-  release:
-    types: [commit]
+on: workflow_dispatch
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub

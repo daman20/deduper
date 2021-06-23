@@ -5,7 +5,6 @@ ADD main.py .
 ADD deletedupes.py .
 ADD makehashes.py .
 ADD requirements.txt .
-ADD manage.py .
 #pip management
 RUN pip install --upgrade pip
 #install dependencies

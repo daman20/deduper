@@ -5,9 +5,10 @@ ADD main.py .
 ADD deletedupes.py .
 ADD makehashes.py .
 ADD requirements.txt .
+ADD manage.py .
 #pip management
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
 #I think this should work
-CMD [ "python", "./main.py" ]
+CMD [ "python", "./manage.py" ]

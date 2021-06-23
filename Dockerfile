@@ -1,5 +1,5 @@
 #Base Image
-FROM python:3.8
+FROM python:3.6-slim
 #Project Files
 ADD main.py .
 ADD deletedupes.py .

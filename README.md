@@ -1,4 +1,5 @@
 # deduper
+This is a slim verison of deduper-ui, which has this and a Django UI. If you would like the user interface, please use that container, available at:  
 # Usage
 This is a few simple python scripts to delete duplicate files based off of SHA512 hash. To get started run main.py
 # Installation

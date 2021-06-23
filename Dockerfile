@@ -10,5 +10,3 @@ ADD manage.py .
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
-#I think this should work
-CMD [ "python", "./manage.py" ]

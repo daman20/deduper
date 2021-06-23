@@ -13,7 +13,7 @@ def sha512(fname):
     return hash_sha.hexdigest()
 def main():
   hashes = {}
-  mypath = os.getcwd()
+  mypath = "/scan"
   filenames = [f for f in listdir(mypath) if isfile(join(mypath, f))]
   for filename in filenames:
     print(f"Now Calculating : {filename}")

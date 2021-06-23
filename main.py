@@ -1,4 +1,5 @@
 #Bundles the Helper scripts together
 import deletedupes, makehashes
-makehashes.main()
-deletedupes.main()
+def start():
+  makehashes.main()
+  deletedupes.main()

@@ -15,10 +15,12 @@ def sha512(fname):
 def main(mypath):
   hashes = {}
   filenames = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+  print(mypath)
   for filename in filenames:
     print(f"Now Calculating : {filename}")
     hashes[filename] = sha512(filename)
-  with open("hashes.txt", "a") as myfile:
+  with open("hashes.txt", "a+") as myfile:
+    print(hashes)
     myfile.write(json.dumps(hashes))
     myfile.close()
   print("Hashing Complete")

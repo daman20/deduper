@@ -261,7 +261,7 @@ cython_debug/
 .ionide
 
 ###hashes###
-hashes.txt
+hashes.json
 #replit
 .replit
 __pycache__/*

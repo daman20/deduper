@@ -1,11 +1,8 @@
 #Bundles the Helper scripts together
 import deletedupes, makehashes, os
 directory = "."
-def hashing(rootdir):
-    for it in os.scandir(rootdir):
-        if it.is_dir and not str(it.path).startswith("."):
-            makehashes.main(it.path)
-            hashing(it)
- 
-hashing(directory)
+allsubdirs = list_subfolders_with_paths = [f.path for f in os.scandir(directory) if f.is_dir()]
+for i in allsubdirs:
+  print(i)
+  makehashes.main(i)
 deletedupes.main()

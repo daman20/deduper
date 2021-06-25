@@ -18,8 +18,9 @@ def main(mypath):
   print(mypath)
   for filename in filenames:
     print(f"Now Calculating : {filename}")
-    hashes[filename] = sha512(filename)
-  with open("hashes.txt", "a+") as myfile:
+    currentfile = f"{mypath}/{filename}"
+    hashes[currentfile] = sha512(currentfile)
+  with open("hashes.json", "a+") as myfile:
     print(hashes)
     myfile.write(json.dumps(hashes))
     myfile.close()

@@ -10,14 +10,11 @@ ADD guifunctions.py .
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
-RUN apt-get update && apt-get install tk-dev && rm -r /var/lib/apt/lists/*
-RUN export uid=99 gid=100 && \
-    mkdir -p /home/developer && \
-    echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
-    echo "developer:x:${uid}:" >> /etc/group && \
-    echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer && \
-    chmod 0440 /etc/sudoers.d/developer && \
-    chown ${uid}:${gid} -R /home/developer
-USER developer
-ENV HOME /home/developer
+##Add tkinter
+RUN apk add python3-tkinter
+# Install vnc, xvfb in order to create a 'fake' display
+RUN     apk add x11vnc xvfb
+RUN     mkdir ~/.vnc
+# Setup a password
+RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
 CMD [ "python", "./main.py" ]

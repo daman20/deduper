@@ -10,5 +10,5 @@ ADD guifunctions.py .
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
-RUN sudo apt-get install tk
+RUN apt-get update && apt-get install tk-dev && rm -r /var/lib/apt/lists/*
 CMD [ "python", "./main.py" ]

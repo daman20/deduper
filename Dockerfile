@@ -17,4 +17,5 @@ RUN     apk add x11vnc xvfb
 RUN     mkdir ~/.vnc
 # Setup a password
 RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
+ENV DISPLAY :5900
 CMD [ "python", "./main.py" ]

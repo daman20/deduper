@@ -18,9 +18,9 @@ ADD guifunctions.py .
 #install python
 RUN add-pkg py3-pip
 #pip management
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 #install dependencies
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 ##Add tkinter
 RUN add-pkg python3-tkinter
 ENV DISPLAY = 5800

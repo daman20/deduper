@@ -4,10 +4,12 @@ from os.path import isfile, join
 import os
 import json
 
+import guifunctions
+from guifunctions import *
+
 def sha512(fname):
     hash_sha = hashlib.sha512()
     if(fname != "hashes.json"):
-      print(f"{fname} is being delted if necessary")
       with open(fname, "rb") as f:
           for chunk in iter(lambda: f.read(2 ** 20), b""):
               hash_sha.update(chunk)

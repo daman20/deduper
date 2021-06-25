@@ -6,7 +6,7 @@ import json
 
 def sha512(fname):
     hash_sha = hashlib.sha512()
-    if(fname != "hashes.txt"):
+    if(fname != "hashes.json"):
       print(f"{fname} is being delted if necessary")
       with open(fname, "rb") as f:
           for chunk in iter(lambda: f.read(2 ** 20), b""):
@@ -15,13 +15,8 @@ def sha512(fname):
 def main(mypath):
   hashes = {}
   filenames = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-  print(mypath)
   for filename in filenames:
     print(f"Now Calculating : {filename}")
     currentfile = f"{mypath}/{filename}"
     hashes[currentfile] = sha512(currentfile)
-  with open("hashes.json", "a+") as myfile:
-    print(hashes)
-    myfile.write(json.dumps(hashes))
-    myfile.close()
-  print("Hashing Complete")
+    return hashes

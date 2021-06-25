@@ -1,8 +1,8 @@
 import json, os
 def main():
   print("Commencing Deleting")
-  with open('hashes.json', 'r') as file:
-    hashes = json.loads(file.read())
+  f = open('hashes.json', 'r')
+  hashes = json.load(f)
 
   rev_dict = {}
   for key, value in hashes.items():
@@ -16,4 +16,4 @@ def main():
       os.remove(i)
   print("We sucessfully removed the duplicate files")
   print("Cleaning Up")
-  os.remove("hashes.txt")
+  os.remove("hashes.json")

@@ -1,22 +1,27 @@
-#Base Image
-FROM python:3.8.10-alpine
+# Pull base image.
+FROM jlesage/baseimage-gui:alpine-3.6
+
+# Install xterm.
+RUN add-pkg xterm
+
+# Copy the start script.
+COPY startapp.sh /startapp.sh
+
+# Set the name of the application.
+ENV APP_NAME="Deduper"
 #Project Files
 ADD main.py .
 ADD deletedupes.py .
 ADD makehashes.py .
 ADD requirements.txt .
 ADD guifunctions.py .
+#install python
+RUN apk install python3
 #pip management
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
 ##Add tkinter
 RUN apk add python3-tkinter
-# Install vnc, xvfb in order to create a 'fake' display
-RUN     apk add x11vnc xvfb
-RUN     mkdir ~/.vnc
-# Setup a password
-RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
-ENV DISPLAY localhost:5900
-EXPOSE 5900
+ENV DISPLAY = 5800
 CMD [ "python", "./main.py" ]

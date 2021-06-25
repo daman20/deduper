@@ -9,6 +9,17 @@ ADD guifunctions.py .
 #pip management
 RUN pip install --upgrade pip
 #install dependencies
+#install dependencies
 RUN pip install -r requirements.txt
 RUN apk add python3-tkinter
+#Add x11 support
+RUN export uid=99 gid=100 && \
+    mkdir -p /home/developer && \
+    echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
+    echo "developer:x:${uid}:" >> /etc/group && \
+    echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer && \
+    chmod 0440 /etc/sudoers.d/developer && \
+    chown ${uid}:${gid} -R /home/developer
+USER developer
+ENV HOME /home/developer
 CMD [ "python", "./main.py" ]

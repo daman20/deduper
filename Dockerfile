@@ -16,8 +16,8 @@ ADD makehashes.py .
 ADD requirements.txt .
 ADD guifunctions.py .
 #install python
-RUN add-pkg py3-pip
 RUN add-pkg python3
+RUN add-pkg py3-pip
 #pip management
 RUN pip install --upgrade pip
 #install dependencies

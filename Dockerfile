@@ -17,6 +17,7 @@ ADD requirements.txt .
 ADD guifunctions.py .
 #install python
 RUN add-pkg py3-pip
+RUN add-pkg python3
 #pip management
 RUN pip3 install --upgrade pip
 #install dependencies

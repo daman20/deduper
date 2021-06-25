@@ -25,4 +25,4 @@ RUN pip3 install -r requirements.txt
 ##Add tkinter
 RUN add-pkg python3-tkinter
 ENV DISPLAY = 5800
-CMD [ "python", "./main.py" ]
+CMD [ "python3", "./main.py" ]

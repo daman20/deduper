@@ -10,5 +10,5 @@ ADD guifunctions.py .
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
-RUN apk install python3-tkinter
+RUN apk add python3-tkinter
 CMD [ "python", "./main.py" ]

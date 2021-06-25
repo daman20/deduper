@@ -1,14 +1,9 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:alpine-3.8
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y x11vnc xvfb
+RUN echo "exec firefox" > ~/.xinitrc && chmod +x ~/.xinitrc
+CMD ["v11vnc", "-create", "-forever"]
 
-# Install xterm.
-RUN add-pkg xterm
-
-# Copy the start script.
-COPY startapp.sh /startapp.sh
-
-# Set the name of the application.
-ENV APP_NAME="Deduper"
 #Project Files
 ADD main.py .
 ADD deletedupes.py .
@@ -16,13 +11,12 @@ ADD makehashes.py .
 ADD requirements.txt .
 ADD guifunctions.py .
 #install python
-RUN add-pkg py3-pip
-RUN add-pkg python3
+RUN apt-get python3
 #pip management
-RUN pip3 install --upgrade pip
+RUN pip install --upgrade pip
 #install dependencies
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 ##Add tkinter
-RUN add-pkg python3-tkinter
-ENV DISPLAY=127.0.0.1:0.5800
-CMD [ "python3", "./main.py" ]
+RUN apt-get python3-tkinter
+ENV DISPLAY=127.0.0.1:0.5900
+RUN echo "python3 main.py" > ~/.xinitrc && chmod +x ~/.xinitrc

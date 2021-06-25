@@ -24,6 +24,6 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 ##Add tkinter
 RUN add-pkg python3-tkinter
-ENV DISPLAY=127.0.0.1:5800
+ENV DISPLAY=127.0.0.1:0
 ENV KEEP_APP_RUNNING=1
 RUN echo "python3 main.py" > ~/.xinitrc && chmod +x ~/.xinitrc

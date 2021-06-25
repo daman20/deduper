@@ -16,17 +16,14 @@ ADD makehashes.py .
 ADD requirements.txt .
 ADD guifunctions.py .
 #install python
-RUN sudo apt update
-RUN sudo apt install software-properties-common
-RUN sudo add-apt-repository ppa:deadsnakes/ppa
-RUN sudo apt update
-RUN sudo apt install python3.8
+RUN add-pkg py3-pip
+RUN add-pkg python3
 #pip management
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
 ##Add tkinter
-RUN apt-get python3-tkinter
+RUN add-pkg python3-tkinter
 ENV DISPLAY=127.0.0.1:0.5800
 ENV KEEP_APP_RUNNING=1
 RUN echo "python3 main.py" > ~/.xinitrc && chmod +x ~/.xinitrc

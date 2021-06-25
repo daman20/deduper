@@ -16,12 +16,12 @@ ADD makehashes.py .
 ADD requirements.txt .
 ADD guifunctions.py .
 #install python
-RUN apk install python3
+RUN add-pkg python3
 #pip management
 RUN pip install --upgrade pip
 #install dependencies
 RUN pip install -r requirements.txt
 ##Add tkinter
-RUN apk add python3-tkinter
+RUN add-pkg python3-tkinter
 ENV DISPLAY = 5800
 CMD [ "python", "./main.py" ]

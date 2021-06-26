@@ -26,4 +26,3 @@ RUN pip3 install -r requirements.txt
 RUN add-pkg python3-tkinter
 ENV KEEP_APP_RUNNING=1
 RUN echo "python3 main.py" > ~/.xinitrc && chmod +x ~/.xinitrc
-ENTRYPOINT python3 /main.py

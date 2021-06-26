@@ -27,7 +27,11 @@ RUN add-pkg python3-tkinter
 ## Set ENVS
 # Generate and install favicons.
 RUN \
-    APP_ICON_URL=https://github.com/daman20/deduper/blob/27cc9ef55776361e3a3f507cd4985cec5c8c8cfc/Deduper%20Logo.png && \
+
     install_app_icon.sh "$APP_ICON_URL"
+RUN \
+    APP_ICON_URL=https://github.com/daman20/deduper/blob/27cc9ef55776361e3a3f507cd4985cec5c8c8cfc/Deduper%20Logo.png && \
+    APP_ICON_DESC='{"masterPicture":"/opt/novnc/images/icons/master_icon.png","iconsPath":"/images/icons/","design":{"ios":{"pictureAspect":"noChange","assets":{"ios6AndPriorIcons":false,"ios7AndLaterIcons":false,"precomposedIcons":false,"declareOnlyDefaultIcon":true}},"desktopBrowser":{"design":"raw"},"windows":{"pictureAspect":"noChange","backgroundColor":"#da532c","onConflict":"override","assets":{"windows80Ie10Tile":false,"windows10Ie11EdgeTiles":{"small":false,"medium":true,"big":false,"rectangle":false}}},"androidChrome":{"pictureAspect":"noChange","themeColor":"#ffffff","manifest":{"display":"standalone","orientation":"notSet","onConflict":"override","declared":true},"assets":{"legacyIcon":false,"lowResolutionIcons":false}},"safariPinnedTab":{"pictureAspect":"silhouette","themeColor":"#5bbad5"}},"settings":{"scalingAlgorithm":"Mitchell","errorOnImageTooSmall":false,"readmeFile":false,"htmlCodeFile":false,"usePathAsIs":false}}' && \
+    install_app_icon.sh "$APP_ICON_URL" "$APP_ICON_DESC"
 ENV KEEP_APP_RUNNING=1
 RUN echo "python3 /main.py" > ~/.xinitrc && chmod +x ~/.xinitrc

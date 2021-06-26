@@ -13,7 +13,7 @@ ENV APP_NAME="Deduper"
 ADD main.py /
 ADD deletedupes.py /
 ADD makehashes.py /
-ADD requirements.txt /
+ADD requirements.txt .
 ADD guifunctions.py /
 #install python
 RUN add-pkg python3

@@ -6,7 +6,7 @@ guifunctions.oktextui(f"The program is currently hashing", "Hashing")
 for i in allsubdirs:
   print(i)
   hashes = makehashes.main(i)
-with open("hashes.json", "a+") as myfile:
+with open("/appdata/hashes.json", "a+") as myfile:
   print(hashes)
   myfile.write(json.dumps(hashes))
   myfile.close()

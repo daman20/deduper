@@ -2,7 +2,7 @@ import json, os
 from guifunctions import *
 def main():
   print("Commencing Deleting")
-  f = open('hashes.json', 'r')
+  f = open('/appdata/hashes.json', 'r')
   hashes = json.load(f)
 
   rev_dict = {}

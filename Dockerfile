@@ -24,5 +24,10 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 ##Add tkinter
 RUN add-pkg python3-tkinter
+## Set ENVS
+# Generate and install favicons.
+RUN \
+    APP_ICON_URL=https://github.com/daman20/deduper/blob/27cc9ef55776361e3a3f507cd4985cec5c8c8cfc/Deduper%20Logo.png && \
+    install_app_icon.sh "$APP_ICON_URL"
 ENV KEEP_APP_RUNNING=1
 RUN echo "python3 /main.py" > ~/.xinitrc && chmod +x ~/.xinitrc

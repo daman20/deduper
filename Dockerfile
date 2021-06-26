@@ -32,6 +32,4 @@ RUN add-pkg python3-tkinter
 #    install_app_icon.sh "$APP_ICON_URL" "$APP_ICON_DESC"
 ENV KEEP_APP_RUNNING=1
 ENV APP_NAME="Deduper"
-USER_ID=99
-GROUP_ID=100
 RUN echo "python3 /main.py" > ~/.xinitrc && chmod +x ~/.xinitrc

@@ -1,7 +1,9 @@
 import json, os
+import PySimpleGUI as psg
+import guifunctions
 from guifunctions import *
 def main():
-  print("Commencing Deleting")
+  guifunctions.oktextui("Commencing Deleting", "Commencing Deleting")
   f = open('/appdata/hashes.json', 'r')
   hashes = json.load(f)
 
@@ -11,10 +13,26 @@ def main():
     
     
   result = filter(lambda x: len(x)>1, rev_dict.values())
-  oktextui(f"The following files have the same contents: {list(result)}", "Same Content Files")
-  for i in list(result):
+  layout = [
+    [sg.Text('Select which duplicates you would like deleted')],
+    [sg.Checkbox(text, 1) for text in list(result)],
+    [sg.Button('Done')]
+  ]
+
+  window = sg.Window('Duplicate Selector', layout)
+
+  while True:  # Event Loop
+    event, values = window.Read()
+    if event is None:
+      break
+    print(values)
+    dupestobedeleted = []
+    for ele in values:
+      if not values[ele]:
+        dupestobedeleted.append(ele)
+  for i in dupestobedeleted:
     if(i != "main.py" or i != "deletedupes.py" or i != "makehashes.py" or i != "requirements.txt"):
       os.remove(i)
-  print("We sucessfully removed the duplicate files")
+  oktextui("We sucessfully removed the duplicate files", "Dupes Deleted")
   print("Cleaning Up")
   os.remove("hashes.json")

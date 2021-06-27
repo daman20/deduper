@@ -21,4 +21,4 @@ def main(mypath):
     print(f"Now Calculating : {filename}")
     currentfile = f"{mypath}/{filename}"
     hashes[currentfile] = sha512(currentfile)
-    return hashes
+  return hashes

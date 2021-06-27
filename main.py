@@ -7,7 +7,7 @@ for i in allsubdirs:
   print(i)
   hashes = makehashes.main(i)
 with open("/appdata/hashes.json", "a+") as myfile:
-  print(hashes)
+  print(myfile)
   myfile.write(json.dumps(hashes))
   myfile.close()
 guifunctions.oktextui("Hashing Complete", "Completed Hashing")

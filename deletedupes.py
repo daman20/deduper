@@ -35,11 +35,10 @@ def main():
             if not values[ele]:
                 print(ele)
                 dupestobedeleted.append(ele)
-        print(f"Dupes to be deleted is {dupestobedeleted}")
+    print(f"Dupes to be deleted is {dupestobedeleted}")
     for i in dupestobedeleted:
         if i != "main.py" or i != "deletedupes.py" or i != "makehashes.py" or i != "requirements.txt":
             os.remove(i)
     oktextui("We sucessfully removed the duplicate files", "Dupes Deleted")
     print("Cleaning Up")
     os.remove("/appdata/hashes.json")
-    oktextui("Dupes Successfully Deleted", "Deduping Complete")

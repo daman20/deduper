@@ -27,6 +27,7 @@ def main():
   while True:  # Event Loop
     event, values = window.Read()
     if event is None or "Done":
+      print("psg event occured")
       break
     window.close()
     print(values)

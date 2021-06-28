@@ -22,7 +22,7 @@ def main():
     [sg.Button('Done')]
   ]
 
-  window = sg.Window('Duplicate Selector', layout)
+  window = sg.Window('Duplicate Selector', layout, finalize=True)
 
   while True:  # Event Loop
     event, values = window.Read()

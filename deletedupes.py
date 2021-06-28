@@ -23,11 +23,12 @@ def main():
   ]
 
   window = sg.Window('Duplicate Selector', layout, finalize=True)
+  print("created deletedupe window")
   dupestobedeleted = []
   while True:  # Event Loop
     event, values = window.Read()
     if event is None or "Done":
-      print("psg event occured")
+      print(f"{event} {values}")
       break
     window.close()
     print(values)

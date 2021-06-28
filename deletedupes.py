@@ -38,5 +38,5 @@ def main():
       os.remove(i)
   oktextui("We sucessfully removed the duplicate files", "Dupes Deleted")
   print("Cleaning Up")
-  os.remove("hashes.json")
+  os.remove("/appdata/hashes.json")
   oktextui("Dupes Successfully Deleted", "Deduping Complete")

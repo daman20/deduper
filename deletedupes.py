@@ -33,6 +33,7 @@ def main():
     for ele in values:
       if not values[ele]:
         dupestobedeleted.append(ele)
+    print(dupestobedeleted)
   for i in dupestobedeleted:
     if(i != "main.py" or i != "deletedupes.py" or i != "makehashes.py" or i != "requirements.txt"):
       os.remove(i)

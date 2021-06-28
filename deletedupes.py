@@ -32,6 +32,7 @@ def main():
     print(values)
     for ele in values:
       if not values[ele]:
+        print(ele)
         dupestobedeleted.append(ele)
     print(f"Dupes to be deleted is {dupestobedeleted}")
   for i in dupestobedeleted:

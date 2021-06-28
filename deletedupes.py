@@ -1,7 +1,10 @@
-import json, os
-import PySimpleGUI as psg
+import json
+import os
+
 import guifunctions
 from guifunctions import *
+
+
 def main():
   guifunctions.oktextui("Commencing Deleting", "Commencing Deleting")
   f = open('/appdata/hashes.json', 'r')
@@ -23,8 +26,9 @@ def main():
 
   while True:  # Event Loop
     event, values = window.Read()
-    if event is None:
+    if event is None or "Done":
       break
+    window.close()
     print(values)
     dupestobedeleted = []
     for ele in values:

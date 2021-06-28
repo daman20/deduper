@@ -31,12 +31,12 @@ def main():
             break
         window.close()
         print(values)
-        numberstobedeleted = [v for k, v in dict(values).items() if v['True']]
-        print(f"Numbers to be deleted is {numberstobedeleted}")
-        for i in numberstobedeleted:
-          filetobedeleted = list(result)[i]
-          print(f"file to be deleted is {filetobedeleted}")
-          dupestobedeleted.append(filetobedeleted)
+    numberstobedeleted = [v for k, v in dict(values).items() if v['True']]
+    print(f"Numbers to be deleted is {numberstobedeleted}")
+    for i in numberstobedeleted:
+      filetobedeleted = list(result)[i]
+      print(f"file to be deleted is {filetobedeleted}")
+      dupestobedeleted.append(filetobedeleted)
     print(f"Dupes to be deleted is {dupestobedeleted}")
     for i in dupestobedeleted:
         if i != "main.py" or i != "deletedupes.py" or i != "makehashes.py" or i != "requirements.txt":

@@ -23,14 +23,13 @@ def main():
   ]
 
   window = sg.Window('Duplicate Selector', layout, finalize=True)
-
+  dupestobedeleted = []
   while True:  # Event Loop
     event, values = window.Read()
     if event is None or "Done":
       break
     window.close()
     print(values)
-    dupestobedeleted = []
     for ele in values:
       if not values[ele]:
         dupestobedeleted.append(ele)

@@ -36,3 +36,4 @@ def main():
   oktextui("We sucessfully removed the duplicate files", "Dupes Deleted")
   print("Cleaning Up")
   os.remove("hashes.json")
+  oktextui("Dupes Successfully Deleted", "Deduping Complete")

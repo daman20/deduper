@@ -22,9 +22,9 @@ def getListOfFiles(dirName):
 if os.path.exists("/appdata/hashes.json"):
   os.remove("/appdata/hashes.json")
 directory = "/scan"
-allsubdirs = getListOfFiles(directory)
+allfiles = getListOfFiles(directory)
 guifunctions.oktextui(f"The program is currently hashing", "Hashing")
-for i in allsubdirs:
+for i in allfiles:
   print(i)
   hashes = makehashes.main(i)
 with open("/appdata/hashes.json", "a+") as myfile:

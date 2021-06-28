@@ -14,11 +14,9 @@ def sha512(fname):
           for chunk in iter(lambda: f.read(2 ** 20), b""):
               hash_sha.update(chunk)
     return hash_sha.hexdigest()
-def main(mypath):
+def main(filenames):
   hashes = {}
-  filenames = [f for f in listdir(mypath) if isfile(join(mypath, f))]
   for filename in filenames:
     print(f"Now Calculating : {filename}")
-    currentfile = f"{mypath}/{filename}"
-    hashes[currentfile] = sha512(currentfile)
+    hashes[filename] = sha512(filename)
   return hashes

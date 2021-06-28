@@ -31,7 +31,7 @@ def main():
             break
         window.close()
         print(values)
-    numberstobedeleted = [v for k, v in dict(values).items() if v['True']]
+    numberstobedeleted = [v for k, v in dict(values).items() if v[True]]
     print(f"Numbers to be deleted is {numberstobedeleted}")
     for i in numberstobedeleted:
       filetobedeleted = list(result)[i]

@@ -27,7 +27,7 @@ def main():
     while True:  # Event Loop
         event, values = window.Read()
         if event is None or "Done":
-            print(f"{event} {values}")
+            print(f"EVENT IS: {event} \n VALUES IS: {values}")
             break
         window.close()
         print(values)

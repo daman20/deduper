@@ -1,5 +1,7 @@
 #Bundles the Helper scripts together
 import deletedupes, makehashes, os, json, guifunctions
+if os.path.exists("/appdata/hashes.json"):
+  os.remove("/appdata/hashes.json")
 directory = "/scan"
 allsubdirs = list_subfolders_with_paths = [f.path for f in os.scandir(directory) if f.is_dir()]
 guifunctions.oktextui(f"The program is currently hashing", "Hashing")

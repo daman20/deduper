@@ -34,7 +34,7 @@ def main():
         numberstobedeleted = [v for k, v in dict(values).items() if v['True']]
         for i in numberstobedeleted:
           filetobedeleted = list(result)[i]
-          print(filetobedeleted)
+          print(f"file to be deleted is {filetobedeleted}")
           dupestobedeleted.append(filetobedeleted)
     print(f"Dupes to be deleted is {dupestobedeleted}")
     for i in dupestobedeleted:

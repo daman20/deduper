@@ -31,10 +31,10 @@ def main():
             break
         window.close()
         print(values)
-        for ele in values:
-            if not values[ele]:
-                print(ele)
-                dupestobedeleted.append(ele)
+        numberstobedeleted = [v for k, v in dict(values).items() if v['True']]
+        for i in numberstobedeleted:
+          filetobedeleted = list(result)[i]
+          dupestobedeleted.append(filetobedeleted)
     print(f"Dupes to be deleted is {dupestobedeleted}")
     for i in dupestobedeleted:
         if i != "main.py" or i != "deletedupes.py" or i != "makehashes.py" or i != "requirements.txt":

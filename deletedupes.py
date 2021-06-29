@@ -31,7 +31,10 @@ def main():
             break
         window.close()
         print(values)
-    numberstobedeleted = [v for k, v in dict(values).items() if v[True]]
+    numberstobedeleted = []
+    for i in values:
+      if values[i] == True:
+        numberstobedeleted.append(i)
     print(f"Numbers to be deleted is {numberstobedeleted}")
     for i in numberstobedeleted:
       filetobedeleted = list(result)[i]
